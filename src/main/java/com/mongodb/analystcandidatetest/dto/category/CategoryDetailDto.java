@@ -1,16 +1,16 @@
-package com.mongodb.analystcandidatetest.dto;
+package com.mongodb.analystcandidatetest.dto.category;
 
 import com.mongodb.analystcandidatetest.model.Category;
 
 import java.util.UUID;
 
-public record CategoryDetail(
+public record CategoryDetailDto(
         UUID id,
         String title,
         String description,
-        UUID ownerId
+        String ownerId
 ) {
-    public CategoryDetail(Category category) {
+    public CategoryDetailDto(Category category) {
         this(category.getId(), category.getTitle(), category.getDescription(), category.getOwnerId());
     }
 }

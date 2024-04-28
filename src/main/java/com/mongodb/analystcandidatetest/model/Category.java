@@ -1,13 +1,13 @@
 package com.mongodb.analystcandidatetest.model;
 
-import com.mongodb.analystcandidatetest.dto.CategoryRequestDto;
+import com.mongodb.analystcandidatetest.dto.category.CategoryRequestDto;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.UUID;
 
-@Document(collection = "")
+@Document(collection = "categories")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -18,7 +18,7 @@ public class Category {
     private UUID id;
     private String title;
     private String description;
-    private UUID ownerId;
+    private String ownerId;
 
     public Category(CategoryRequestDto categoryRequestDto) {
         this.title = categoryRequestDto.title();
